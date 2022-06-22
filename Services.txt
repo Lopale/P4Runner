@@ -1,0 +1,3 @@
+Distance :
+	Récupère la distance parcourut par le joueur
+	Permet de la trnasmettre pour l'afficher sur le HUD

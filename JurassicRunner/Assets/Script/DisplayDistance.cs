@@ -18,6 +18,6 @@ public class DisplayDistance : MonoBehaviour
     void Update()
     {
         IDistance distance = ServicesLocator.GetService<IDistance>();
-        DistanceUI.text = distance.Get();
+        DistanceUI.text = distance.GetAffiche();
     }
 }

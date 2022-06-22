@@ -6,7 +6,8 @@ using UnityEngine;
 public interface IDistance
 {
     void Add(float pDistance);
-    string Get();
+    float Get();
+    string GetAffiche();
 }
 
 public class Distance : MonoBehaviour, IDistance
@@ -25,16 +26,22 @@ public class Distance : MonoBehaviour, IDistance
         Value = 0;
     }
 
-    public string Get()
+    public string GetAffiche()
     {
         string distanceAffiche = "Distance : " + Value.ToString() + " m";
         return distanceAffiche;
     }
 
+    public float Get()
+    {
+        float distance = Value;
+        return distance;
+    }
+
     public void Add(float pDistance)
     {
         Value = (float)Math.Floor(pDistance);
-        Debug.Log(Value);
+        //Debug.Log(Value);
     }
 
 

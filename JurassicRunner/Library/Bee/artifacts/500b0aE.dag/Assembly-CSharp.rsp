@@ -365,6 +365,8 @@
 "Assets/Script/DisplayDistance.cs"
 "Assets/Script/Distance.cs"
 "Assets/Script/GameController.cs"
+"Assets/Script/LavaPlane.cs"
+"Assets/Script/MakeTransparent.cs"
 "Assets/Script/PlayerControl.cs"
 "Assets/Script/ServicesLocator.cs"
 -langversion:9.0

@@ -57,10 +57,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\GameController.cs" />
+    <Compile Include="Assets\Script\DisplayDistance.cs" />
+    <Compile Include="Assets\Script\MakeTransparent.cs" />
+    <Compile Include="Assets\Script\LavaPlane.cs" />
     <Compile Include="Assets\Script\PlayerControl.cs" />
     <Compile Include="Assets\Script\ServicesLocator.cs" />
     <Compile Include="Assets\Script\Distance.cs" />
-    <Compile Include="Assets\Script\DisplayDistance.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

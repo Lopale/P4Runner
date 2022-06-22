@@ -6,16 +6,22 @@ public class PlayerControl : MonoBehaviour {
 	[SerializeField]
 	private float translationSpeed = 10;
 
-//	[SerializeField]
-	private float MaxHeightJump = 0.1f;
+	[Space]
+	[SerializeField] private Transform FeetTransform;
+	[SerializeField] private LayerMask FloorMask;
+	[SerializeField] private float jumpForce = 3f;
+	/*private float MaxHeightJump = 0.1f;
 	private float currentheightJump = 0;
 	private float speedJump = 0.7f;
 	private bool jumpInProgress = false;
-
+	*/
 	private float MAX_X = 14.5f;
 	private float MIN_X = -14.5f;
-	private float MIN_Y = 0.6f;
+	private float MIN_Y = 0;
 	private float MAX_Y = 3f;
+
+	[Space]
+	[SerializeField] public float persoZ;
 
 
 	// Use this for initialization
@@ -29,7 +35,7 @@ public class PlayerControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
+		persoZ = transform.position.z;
 
 		IDistance distance = ServicesLocator.GetService<IDistance>();
 		distance.Add(transform.position.z);
@@ -50,27 +56,37 @@ public class PlayerControl : MonoBehaviour {
 			transform.position += transform.forward * VerticallMove;
 		}
 
+		//if (Input.GetKeyDown(KeyCode.Space))
 		if (Input.GetButton("Jump"))
         {
 
 
+			/*
+
+						Debug.Log("Jump currentheightJump: "+currentheightJump+ " MaxHeightJump: "+ MaxHeightJump);
 
 
-			Debug.Log("Jump currentheightJump: "+currentheightJump+ " MaxHeightJump: "+ MaxHeightJump);
+						currentheightJump += speedJump * Time.deltaTime;
+						if(currentheightJump > MaxHeightJump)
+						{
+							// Tmp il faut le faire redescendre
+							currentheightJump = MaxHeightJump;
+						}
+						if (transform.position.y <= MAX_Y)
+						{
+							transform.position += transform.up * currentheightJump;
+						} 
 
-			
-			currentheightJump += speedJump * Time.deltaTime;
-			if(currentheightJump > MaxHeightJump)
+						//GetComponent<Rigidbody>().AddForce(Vector3.up * 5);
+						*/
+			Debug.Log("Press Jump "+ FeetTransform.position +"  "+ Physics.CheckSphere(FeetTransform.position, 0.1f, FloorMask));
+
+			if (Physics.CheckSphere(FeetTransform.position, 1f, FloorMask))
             {
-				// Tmp il faut le faire redescendre
-				currentheightJump = MaxHeightJump;
+				Debug.Log("Jump");
+				GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 			}
-            if (transform.position.y <= MAX_Y)
-            {
-				transform.position += transform.up * currentheightJump;
-			} 
-			
-			//GetComponent<Rigidbody>().AddForce(Vector3.up * 5);
+
 			
 
 		}
@@ -97,7 +113,12 @@ public class PlayerControl : MonoBehaviour {
 	{
 		Debug.Log("Collision avec "+ other.name);
 
-		//Destroy(other);
+        //Destroy(other);
+
+        if (other.name == "Lava")
+		{
+			Debug.Log("GameOver De Lave");
+		}
 
 		if (GameController.Instance.Health > 0) { 
 			GameController.Instance.Health -= 10; // On retire 10 point d'énergie si on a une colision
