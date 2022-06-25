@@ -362,13 +362,18 @@
 -r:"Library/Bee/artifacts/500b0aE.dag/UnityEngine.SpatialTracking.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/500b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
-"Assets/Script/DisplayDistance.cs"
 "Assets/Script/Distance.cs"
 "Assets/Script/GameController.cs"
-"Assets/Script/LavaPlane.cs"
+"Assets/Script/InteractionDecor/Fence.cs"
+"Assets/Script/InteractionDecor/LavaPlane.cs"
+"Assets/Script/InteractionDecor/Mining.cs"
 "Assets/Script/MakeTransparent.cs"
+"Assets/Script/Menu/Finish.cs"
+"Assets/Script/Menu/MainMenu.cs"
+"Assets/Script/Menu/PauseMenu.cs"
 "Assets/Script/PlayerControl.cs"
-"Assets/Script/ServicesLocator.cs"
+"Assets/Script/Services/DisplayDistance.cs"
+"Assets/Script/Services/ServicesLocator.cs"
 -langversion:9.0
 
 /deterministic

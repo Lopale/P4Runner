@@ -22,33 +22,40 @@ MVP 1. 0 Infinit Runner (objectif fin de semaine)
 [X] Toucher un obstacle provoque des dégats
 [X] Tomber dans un fossé fait perdre le jeu
 [X] Tomber dans un trou provoque des dégats
+[X] Toucher la grille provoque des dégats
 [X] La distance parcourus par le joueur est affiché ( => Service Locator)
 [X] La vie du joueur est affiché
-[ ] Le jeu possède un menu
-[ ] Le jeu possède un écran de fin qui contient la distance parcourut
+[X] Le jeu possède un menu
+[X] Il est possible de quitter le jeu depuis le menu
+[X] Le jeu possède un écran de fin qui contient la distance parcourut
+[X] Il est possible de quitter le jeu depuis l'écran de fin
+[X] Il est possible de revenir au menu jeu depuis l'écran de fin
+[X] Il est possible de recommencer une partie du jeu depuis l'écran de fin
 
 
 MVP 1.1 (mon idée serait de créer approximativement le vrai gameplay de cette fausse pub : https://www.youtube.com/shorts/iAUaPRoZADs )
 
-[ ] Le jeu possède un mode pause
-[ ] Les tronçons possèdent des pièges
-[ ] 	Caisse
-[ ] 	piège "caché" (texture différentes au sol)
+[X] Le jeu possède un mode pause
+[X] Les tronçons possèdent des pièges
+[X] 	Caisse
+[X] 	piège "caché" (Mine faites avec des sphère)
+[X] Les mines produisent un son au contact
+[X] Les mines explosent (effet de particules)
 [ ] Le nombre de piège et obstacle augmente en fonction de la distance parcourut
 [ ] Chaque tronçon possèdent deux côtés qui modifier le nombre de personnage du joueur
 [ ] 	en plus
 [ ] 	en moins
 [ ] Des ennemis sont présents sur certains tronçons
-[ ] il faut avoir plus de point de vie que l'ennemis pour passer
+[ ] Il faut avoir plus de point de vie que l'ennemis pour passer
 [ ] Toucher des ennemis fait perdre un nombre de point vie égale au nombre de point de vie de l'adversaire (et inversement)
 [ ] Le jeu possède un écran de fin qui contient le nombre maximum de personnage du joueur
 [ ] Les déplacement à gauche et à droite incline le personnage
 [ ] Le joueur produit un son en se déplaçant
-[ ] Le joueur produit un son en sautant
-[ ] Le joueur produit un son quand il se fait toucher
+[X] Le joueur produit un son en sautant
+[X] Le joueur produit un son quand il se fait toucher
 [ ] Les enemis produisent des sons en mourant
 [ ] Passer un "portail" Droite ou gauche produit un son
-[ ] Toucher la grille produit un son 
+[ ] Toucher la grille produit un son electrique
  
 MVP 1.2
  
@@ -64,10 +71,13 @@ MVP 1.3 (Ultime)
 [ ] La route est une route de sable
 [ ] Les trous sont des trous d'eau
 [ ] Le fond des gouffres est de la lave
-[ ] Toucher la grille provoque des dégats
 [ ] Particule poussière derrière joueur qui court
+[ ] Particule aléatoire sur les grilles pour montrer qu'elles sont électifié
 [ ] Départ du jeu : porte de Jurassic Park
 [ ] Vérifier que la porte n'apparait plus dans les tronçons suivants
- 
+[ ] Intégrer la police JP dans le menu
+[ ] Refactoriser les scripts de menu
+
 MVP 1.4 (option)
 [ ] Enregistrer les scores en ligne pour voir comment se comporte Unity avec les BDD
+[ ] Mise en fonction du slider volume dans le menu option

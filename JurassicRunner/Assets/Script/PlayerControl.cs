@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour {
 
@@ -15,8 +16,13 @@ public class PlayerControl : MonoBehaviour {
 	private float speedJump = 0.7f;
 	private bool jumpInProgress = false;
 	*/
-	private float MAX_X = 14.5f;
-	private float MIN_X = -14.5f;
+	// Sans contact avec les barrières
+	//private float MAX_X = 14.5f;
+	//private float MIN_X = -14.5f;
+
+	// Avec contact avec les barrières
+	private float MAX_X = 15f;
+	private float MIN_X = -15f;
 	private float MIN_Y = 0;
 	private float MAX_Y = 3f;
 
@@ -24,11 +30,20 @@ public class PlayerControl : MonoBehaviour {
 	[SerializeField] public float persoZ;
 
 
+	//La 1ère chose est donc de déclarer 3 AudioClip que j'assignerai via l'inspecteur
+	public AudioClip soundTouch;
+	//Création d'une variable afin de garder une référence au composant AudioSource
+	private AudioSource _audioSource;
+
+
 	// Use this for initialization
 	void Start () {
 
 		//initialisation du player
 		transform.position = new Vector3(0, MIN_Y, 0);
+
+		//On récupère le composant AudioSource du gameObject et on l'assigne à la variable prévue à cet effet
+		_audioSource = GetComponent<AudioSource>();
 
 	}
 	
@@ -85,6 +100,8 @@ public class PlayerControl : MonoBehaviour {
             {
 				Debug.Log("Jump");
 				GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+				_audioSource.clip = soundTouch;       //Ceci permet d'assigner le soundTouch comme AudioClip par défaut 
+				_audioSource.Play();
 			}
 
 			
@@ -113,20 +130,27 @@ public class PlayerControl : MonoBehaviour {
 	{
 		Debug.Log("Collision avec "+ other.name);
 
-        //Destroy(other);
+		//Destroy(other);
 
-        if (other.name == "Lava")
+		if (other.name == "Lava")
 		{
 			Debug.Log("GameOver De Lave");
+			SceneManager.LoadScene("finish");
 		}
 
 		if (GameController.Instance.Health > 0) { 
 			GameController.Instance.Health -= 10; // On retire 10 point d'énergie si on a une colision
+
+    
+
 			if (GameController.Instance.Health <= 0)
 			{
 				// Scene manager
 				Debug.Log("GameOver");
+				SceneManager.LoadScene("finish");
 			}
+			_audioSource.clip = soundTouch;       //Ceci permet d'assigner le soundTouch comme AudioClip par défaut 
+			_audioSource.Play();
 		}
 	}
 

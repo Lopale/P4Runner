@@ -41,7 +41,7 @@ public class Distance : MonoBehaviour, IDistance
     public void Add(float pDistance)
     {
         Value = (float)Math.Floor(pDistance);
-        //Debug.Log(Value);
+        PlayerPrefs.SetFloat("DistanceTransmise", Value);
     }
 
 
