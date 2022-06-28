@@ -35,6 +35,9 @@ public class PlayerControl : MonoBehaviour {
 	//Création d'une variable afin de garder une référence au composant AudioSource
 	private AudioSource _audioSource;
 
+	float smooth = 5.0f;
+	float tiltAngle = 60.0f;
+
 
 	// Use this for initialization
 	void Start () {
@@ -57,6 +60,17 @@ public class PlayerControl : MonoBehaviour {
 
 		float horizontalMove = Input.GetAxis("Horizontal") * translationSpeed * Time.deltaTime;
 		transform.position += transform.right * horizontalMove ;
+
+		// Smoothly tilts a transform towards a target rotation.
+		float tiltAroundY = Input.GetAxis("Horizontal") * tiltAngle;
+
+		// Rotate the cube by converting the angles into a quaternion.
+		Quaternion target = Quaternion.Euler(0, tiltAroundY, 0);
+
+		// Dampen towards the target rotation
+		transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
+
+
 		// ajouter angle de +/- 10° et si je lache on revient à 0
 
 		if (Input.GetAxis("Vertical") != 0)

@@ -65,9 +65,10 @@
     <Compile Include="Assets\Script\PlayerControl.cs" />
     <Compile Include="Assets\Script\Services\ServicesLocator.cs" />
     <Compile Include="Assets\Script\Distance.cs" />
+    <Compile Include="Assets\Script\InteractionDecor\Fence.cs" />
     <Compile Include="Assets\Script\Menu\PauseMenu.cs" />
     <Compile Include="Assets\Script\InteractionDecor\Mining.cs" />
-    <Compile Include="Assets\Script\InteractionDecor\Fence.cs" />
+    <Compile Include="Assets\Script\ObsSpawn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

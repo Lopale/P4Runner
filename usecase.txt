@@ -49,19 +49,20 @@ MVP 1.1 (mon idée serait de créer approximativement le vrai gameplay de cette 
 [ ] Il faut avoir plus de point de vie que l'ennemis pour passer
 [ ] Toucher des ennemis fait perdre un nombre de point vie égale au nombre de point de vie de l'adversaire (et inversement)
 [ ] Le jeu possède un écran de fin qui contient le nombre maximum de personnage du joueur
-[ ] Les déplacement à gauche et à droite incline le personnage
+[X] Les déplacement à gauche et à droite incline le personnage
 [ ] Le joueur produit un son en se déplaçant
 [X] Le joueur produit un son en sautant
 [X] Le joueur produit un son quand il se fait toucher
 [ ] Les enemis produisent des sons en mourant
 [ ] Passer un "portail" Droite ou gauche produit un son
-[ ] Toucher la grille produit un son electrique
+[X] Toucher la grille produit un son electrique
+[X] Toucher la grille produit un arc electrique localisé à l'emplacement de l'impact
  
 MVP 1.2
  
-[ ] Le personnage est animé
+[X] Le personnage est animé en course
 [ ] Les enemis peuvent avoir des armes
-[ ] Se faire toucher fait diminuer les points de vie du joueur
+[ ] Se faire toucher par un enemis fait diminuer les points de vie du joueur
 [ ] Le jeu fonctionne sur mobile
  
 MVP 1.3 (Ultime)
@@ -77,6 +78,8 @@ MVP 1.3 (Ultime)
 [ ] Vérifier que la porte n'apparait plus dans les tronçons suivants
 [ ] Intégrer la police JP dans le menu
 [ ] Refactoriser les scripts de menu
+[ ] Le personnage est animé en chute
+[ ] Le personnage est animé en mort
 
 MVP 1.4 (option)
 [ ] Enregistrer les scores en ligne pour voir comment se comporte Unity avec les BDD
